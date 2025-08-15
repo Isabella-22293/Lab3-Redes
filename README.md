@@ -1,10 +1,5 @@
 
-# Lab 3 – Algoritmos de Enrutamiento (Prototipo)
-Avances solicitados:
-1) **Dijkstra** funcional para construir tabla de ruteo a partir de la topología.
-2) **Infraestructura** de sockets + hilos en paralelo: *forwarding* y *routing*, con formato de mensaje tipo JSON.
-
-> Probado localmente en una sola máquina usando TCP sockets (fase 1).
+# Lab 3 – Algoritmos de Enrutamiento
 
 ## Estructura
 - `dijkstra.py`: algoritmo y utilidades de grafo.
@@ -40,10 +35,3 @@ python tests/send_message.py --from A --to C --names configs/names-example.json
 ```
 
 Deberías ver en consola el *forwarding* pasando por B (si A–C no son vecinos directos).
-
-## Notas
-- Este prototipo cumple el formato de mensaje del enunciado (`proto`, `type`, `from`, `to`, `ttl`, `headers`, `payload`).
-- Los hilos corren en paralelo: `forwarding_loop()` escucha y reenvía; `routing_loop()` inicializa tabla y atiende INFO.
-- TTL se decrementa en cada salto; si llega a 0 se descarta.
-- El *routing* con Dijkstra reconstruye tabla ante cambio de topología (si recarga archivo o si llega INFO).
-- Queda listo para integrar Flooding/LSR/DV y reemplazar transportes por XMPP en la fase 2.
