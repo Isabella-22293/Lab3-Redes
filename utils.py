@@ -15,8 +15,6 @@ def make_packet(p_type, frm, to, payload, hops=0, headers=None):
     }
 
 def decode_message(msg_data):
-    # Redis devuelve bytes (si no se configuró decode_responses)
     if isinstance(msg_data, bytes):
         msg_data = msg_data.decode('utf-8')
     return json.loads(msg_data)
-
