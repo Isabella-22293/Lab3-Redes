@@ -1,8 +1,8 @@
 {
   "type": "topo",
   "config": {
-    "A": ["B"],
-    "B": ["A", "C"],
-    "C": ["B"]
+    "sec10.grupo3.A": ["sec10.grupo3.B"],
+    "sec10.grupo3.B": ["sec10.grupo3.A", "sec10.grupo3.C"],
+    "sec10.grupo3.C": ["sec10.grupo3.B"]
   }
 }
